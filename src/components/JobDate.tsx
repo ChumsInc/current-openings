@@ -1,20 +1,22 @@
 import React from 'react';
-import Alert from "chums-ducks/dist/ducks/alerts/Alert";
+import Alert from "@mui/material/Alert";
+import Box from "@mui/material/Box";
+import {visuallyHidden} from '@mui/utils';
 
 interface JobDateProps {
     date: string|Date|null,
     schemaTag: 'datePosted'|'validThrough'|'jobStartDate',
 }
-const JobDate:React.FC<JobDateProps> = ({date, schemaTag}) => {
+const JobDate = ({date, schemaTag}:JobDateProps) => {
     if (!date || !new Date(date).getTime()) {
         return (
-            <Alert color="warning" title="Warning:">Invalid date for field '{schemaTag}'</Alert>
+            <Alert severity="warning" title="Warning:">Invalid date for field '{schemaTag}'</Alert>
         )
     }
     return (
         <>
-            <span property="datePosted" className="visually-hidden">{new Date(date).toISOString()}</span>
-            <span>{new Date(date).toLocaleDateString()}</span>
+            <Box sx={visuallyHidden} property="datePosted" className="visually-hidden">{new Date(date).toISOString()}</Box>
+            <Box>{new Date(date).toLocaleDateString()}</Box>
         </>
     )
 }

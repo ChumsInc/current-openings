@@ -1,16 +1,17 @@
 import React from "react";
-import {JobPosting} from "../ducks/jobs";
+import {JobPosting} from "../types";
 import JobLocation from "./JobLocation";
+import Link from "@mui/material/Link";
 
-const JobPostingLink:React.FC<JobPosting> = ({id, title, jobLocation, datePosted, validThrough}) => {
+const JobPostingLink = ({id, title, jobLocation, datePosted, validThrough}:JobPosting) => {
     const href = `#job-posting--${id}`;
     return (
         <li key={id}>
-            <a href={href}>
+            <Link href={href}>
                 {title}
                 <small>Posted: {new Date(datePosted).toLocaleDateString()}</small>
                 {validThrough && <small>Valid Through: {new Date(validThrough).toLocaleDateString()}</small>}
-            </a>
+            </Link>
             <JobLocation location={jobLocation} hideAddress={true}/>
         </li>
     )
