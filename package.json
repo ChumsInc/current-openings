@@ -5,7 +5,8 @@
   "scripts": {
     "start": "webpack serve --config webpack.dev.js --progress",
     "build": "webpack --config webpack.prod.js --progress",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "version": "auto-changelog -p && git add CHANGELOG.md"
   },
   "author": "Steve Montgomery",
   "license": "ISC",
@@ -42,6 +43,7 @@
     "@types/react": "^18.2.38",
     "@types/react-dom": "^18.2.17",
     "@types/react-redux": "^7.1.23",
+    "auto-changelog": "^2.4.0",
     "babel-loader": "^9.1.3",
     "bootstrap": "^5.1.3",
     "bootstrap-icons": "^1.8.1",
@@ -77,6 +79,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/UtahGooner/current-openings"
+    "url": "https://github.com/ChumsInc/current-openings.git"
+  },
+  "auto-changelog": {
+    "template": "keepachangelog",
+    "unreleased": true,
+    "commitLimit": false
   }
 }
