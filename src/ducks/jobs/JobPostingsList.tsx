@@ -6,7 +6,9 @@ import JobPostingRender from "../../components/JobPostingRender";
 import JobPostingLink from "../../components/JobPostingLink";
 import {JobPosting} from "../../types";
 import Card from "@mui/material/Card";
-import {CardContent, LinearProgress, Typography} from "@mui/material";
+import CardContent from "@mui/material/CardContent";
+import LinearProgress from "@mui/material/LinearProgress";
+import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 
 const isLivePosting = ({enabled, datePosted, validThrough}: JobPosting): boolean => {
@@ -72,7 +74,7 @@ const JobPostingsList: React.FC<JobPostingsListProps> = ({preview = false}) => {
             )}
             <Card variant="outlined">
                 <CardContent>
-                    <Typography variant="h4" component="h3" sx={{mb: 3}}>Our commitment to Veterans and Military Spouses</Typography>
+                    <Typography variant="h4" component="h3" sx={{my: 3}}>Our commitment to Veterans and Military Spouses</Typography>
                     <Typography variant="body2">
                         At Chums we pledge our commitment to actively hire veterans of the U.S. Armed Forces and Military
                         Spouses.

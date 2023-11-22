@@ -27,7 +27,8 @@
 }
 
 #job-openings .job-opening {
-   border-top: 1px solid #666666;
+   border-bottom: 1px solid #666666;
+   margin-bottom: 3rem;
    padding: 3rem 1rem;
   
 }
