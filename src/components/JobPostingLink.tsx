@@ -2,6 +2,7 @@ import React from "react";
 import {JobPosting} from "../types";
 import JobLocation from "./JobLocation";
 import Link from "@mui/material/Link";
+import Typography from "@mui/material/Typography";
 
 const JobPostingLink = ({id, title, jobLocation, datePosted, validThrough}:JobPosting) => {
     const href = `#job-posting--${id}`;
@@ -9,8 +10,8 @@ const JobPostingLink = ({id, title, jobLocation, datePosted, validThrough}:JobPo
         <li key={id}>
             <Link href={href}>
                 {title}
-                <small>Posted: {new Date(datePosted).toLocaleDateString()}</small>
-                {validThrough && <small>Valid Through: {new Date(validThrough).toLocaleDateString()}</small>}
+                <Typography variant="body2" component="span" sx={{mx: 3}}>Posted: {new Date(datePosted).toLocaleDateString()}</Typography>
+                {validThrough && <Typography variant="body2" component="span" sx={{mx: 3}}>Valid Through: {new Date(validThrough).toLocaleDateString()}</Typography>}
             </Link>
             <JobLocation location={jobLocation} hideAddress={true}/>
         </li>

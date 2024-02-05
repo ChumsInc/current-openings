@@ -10,6 +10,9 @@ import CardContent from "@mui/material/CardContent";
 import LinearProgress from "@mui/material/LinearProgress";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import Divider from "@mui/material/Divider";
+import AlertTitle from "@mui/material/AlertTitle";
+
 
 const isLivePosting = ({enabled, datePosted, validThrough}: JobPosting): boolean => {
     const now = new Date();
@@ -29,7 +32,7 @@ const JobPostingsList: React.FC<JobPostingsListProps> = ({preview = false}) => {
         <Box>
             {loading && (
                 <div aria-busy="true">
-                    <Typography variant="h2" component="h2">Loading current career openings</Typography>
+                    <Typography variant="h1" component="h1">Loading current career openings</Typography>
                     <LinearProgress variant="indeterminate" />
                 </div>
             )}
@@ -51,7 +54,7 @@ const JobPostingsList: React.FC<JobPostingsListProps> = ({preview = false}) => {
             )}
             {loaded && (
                 <div aria-live="polite">
-                    {!!list.length && <Typography variant="h2" component="h2">Current Career Openings</Typography>}
+                    {!!list.length && <Typography variant="h2" component="h1">Current Career Openings</Typography>}
                     {!!list.length && (
                         <ul className="job-openings--list">
                             {list.map(posting => (
@@ -59,13 +62,20 @@ const JobPostingsList: React.FC<JobPostingsListProps> = ({preview = false}) => {
                             ))}
                         </ul>
                     )}
+                    <Divider sx={{my: 3}} />
                     {list.map(posting => (
                         <div key={posting.id}>
                             {preview && isLivePosting(posting) && (
-                                <Alert severity="info" title="Heads up!">This posting is live.</Alert>
+                                <Alert severity="info">
+                                    <AlertTitle>Heads Up!</AlertTitle>
+                                    This posting is live.
+                                </Alert>
                             )}
                             {preview && !isLivePosting(posting) && (
-                                <Alert severity="warning" title="Heads up!">This posting is NOT live.</Alert>
+                                <Alert severity="warning">
+                                    <AlertTitle>Heads Up!</AlertTitle>
+                                    This posting is NOT live.
+                                </Alert>
                             )}
                             <JobPostingRender key={posting.id} posting={posting}/>
                         </div>
@@ -74,7 +84,7 @@ const JobPostingsList: React.FC<JobPostingsListProps> = ({preview = false}) => {
             )}
             <Card variant="outlined">
                 <CardContent>
-                    <Typography variant="h4" component="h3" sx={{my: 3}}>Our commitment to Veterans and Military Spouses</Typography>
+                    <Typography variant="h4" component="h2" sx={{my: 3}}>Our commitment to Veterans and Military Spouses</Typography>
                     <Typography variant="body2">
                         At Chums we pledge our commitment to actively hire veterans of the U.S. Armed Forces and Military
                         Spouses.
