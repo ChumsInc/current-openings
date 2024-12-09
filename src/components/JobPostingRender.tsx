@@ -34,7 +34,7 @@ export default function JobPostingRender({posting}: JobPostingProps) {
         timestamp
     } = posting;
 
-    const ldJSON: any = {
+    const ldJSON: unknown = {
         "@context": 'https://schema.org/',
         '@type': 'JobPosting',
         hiringOrganization: {
@@ -60,7 +60,8 @@ export default function JobPostingRender({posting}: JobPostingProps) {
         experienceInPlaceOfEducation,
     }
 
-    if (!!experienceRequirements) {
+    if (experienceRequirements) {
+        // @ts-expect-error ldJSON is of type "unknown"
         ldJSON.experienceRequirements = {
             "@type": "OccupationalExperienceRequirements",
             monthsOfExperience: experienceRequirements,

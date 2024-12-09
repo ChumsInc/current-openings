@@ -53,18 +53,20 @@ interface JobLocationProps {
 export default function JobLocation({location, hideAddress = false}:JobLocationProps) {
     const {streetAddress, addressLocality, addressRegion, postalCode} = jobLocationLD(location);
     return (
-        <div property="jobLocation" typeof="Place">
-            <address property="address" typeof="PostalAddress">
-                {!hideAddress && <div property="streetAddress">{streetAddress}</div>}
-                <div>
-                    <span property="addressLocality">{addressLocality}</span>,
-                    {' '}
-                    <span property="addressRegion">{addressRegion}</span>
-                    {' '}
-                    <span property="postalCode">{postalCode}</span>
-                </div>
-            </address>
-        </div>
+        <>
+            <div>
+                <address>
+                    {!hideAddress && <div>{streetAddress}</div>}
+                    <div>
+                        <span>{addressLocality}</span>,
+                        {' '}
+                        <span>{addressRegion}</span>
+                        {' '}
+                        <span>{postalCode}</span>
+                    </div>
+                </address>
+            </div>
+        </>
     )
 }
 
