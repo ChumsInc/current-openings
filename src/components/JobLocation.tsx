@@ -50,7 +50,7 @@ interface JobLocationProps {
     hideAddress?: boolean
 }
 
-const JobLocation: React.FC<JobLocationProps> = ({location, hideAddress = false}) => {
+export default function JobLocation({location, hideAddress = false}:JobLocationProps) {
     const {streetAddress, addressLocality, addressRegion, postalCode} = jobLocationLD(location);
     return (
         <div property="jobLocation" typeof="Place">
@@ -67,4 +67,4 @@ const JobLocation: React.FC<JobLocationProps> = ({location, hideAddress = false}
         </div>
     )
 }
-export default JobLocation;
+

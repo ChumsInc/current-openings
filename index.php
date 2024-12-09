@@ -1,6 +1,7 @@
 <?php
 
-
+use chums\ui\WebUI2;
+use chums\ui\CSSOptions;
 /**
  * @package Chums
  * @subpackage ProjectedDemands
@@ -9,13 +10,11 @@
  */
 
 require_once ("autoload.inc.php");
-require_once 'access.inc.php';
 
-$bodyPath = "/apps/current-openings";
-$title = "Current Openings";
-$description = "";
-
-$ui = new WebUI($bodyPath, $title, $description, false, 5);
-$ui->AddCSS("public/main.css");
-$ui->addManifest('public/js/manifest.json');
-$ui->Send();
+$ui = new WebUI2([
+    'requireLogin' => false,
+    'title' => 'Current Openings',
+]);
+$ui->addCSS('public/main.css', CSSOptions::parse(['useTimestampVersion' => true]))
+    ->addManifestJSON('public/js/manifest.json')
+    ->render();

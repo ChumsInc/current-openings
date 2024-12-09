@@ -8,7 +8,7 @@ import {useAppDispatch} from "./configureStore";
 import Box from "@mui/material/Box";
 import AlertTitle from "@mui/material/AlertTitle";
 
-const App: React.FC = () => {
+export default function App() {
     const dispatch = useAppDispatch();
     const [preview, setPreview] = useState<boolean>(false);
 
@@ -37,5 +37,3 @@ const App: React.FC = () => {
         </Box>
     )
 }
-
-export default App;

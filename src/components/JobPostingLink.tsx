@@ -4,7 +4,7 @@ import JobLocation from "./JobLocation";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 
-const JobPostingLink = ({id, title, jobLocation, datePosted, validThrough}:JobPosting) => {
+export default function JobPostingLink({id, title, jobLocation, datePosted, validThrough}:JobPosting) {
     const href = `#job-posting--${id}`;
     return (
         <li key={id}>
@@ -18,4 +18,3 @@ const JobPostingLink = ({id, title, jobLocation, datePosted, validThrough}:JobPo
     )
 }
 
-export default JobPostingLink;

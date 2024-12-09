@@ -13,10 +13,8 @@ const description = (value:string) => {
     }
 }
 
-const EducationalRequirements:React.FC<{ value: string }> = ({value}) => {
+export default function EducationalRequirements({value}:{ value: string }) {
     return (
         <span>{description(value)}</span>
     )
 }
-
-export default EducationalRequirements;

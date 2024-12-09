@@ -5,7 +5,7 @@ import {dismissAlert, selectAlerts} from "./index";
 import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle";
 
-const AlertList = () => {
+export default function AlertList() {
     const dispatch = useAppDispatch();
     const list = useSelector(selectAlerts);
 
@@ -25,4 +25,4 @@ const AlertList = () => {
         </div>
     )
 }
-export default AlertList;
+

@@ -16,7 +16,7 @@ interface JobPostingProps {
     posting: JobPosting
 }
 
-const JobPostingRender = ({posting}: JobPostingProps) => {
+export default function JobPostingRender({posting}: JobPostingProps) {
     const {
         id,
         title,
@@ -141,4 +141,3 @@ const JobPostingRender = ({posting}: JobPostingProps) => {
         </ErrorBoundary>
     )
 }
-export default JobPostingRender;

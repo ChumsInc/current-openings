@@ -7,7 +7,8 @@ interface JobDateProps {
     date: string|Date|null,
     schemaTag: 'datePosted'|'validThrough'|'jobStartDate',
 }
-const JobDate = ({date, schemaTag}:JobDateProps) => {
+
+export default function JobDate({date, schemaTag}:JobDateProps) {
     if (!date || !new Date(date).getTime()) {
         return (
             <Alert severity="warning" title="Warning:">Invalid date for field '{schemaTag}'</Alert>
@@ -20,4 +21,3 @@ const JobDate = ({date, schemaTag}:JobDateProps) => {
         </>
     )
 }
-export default JobDate;

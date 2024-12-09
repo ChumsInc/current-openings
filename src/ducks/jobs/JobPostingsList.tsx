@@ -23,7 +23,7 @@ interface JobPostingsListProps {
     preview?: boolean
 }
 
-const JobPostingsList: React.FC<JobPostingsListProps> = ({preview = false}) => {
+export default function JobPostingsList({preview = false}:JobPostingsListProps) {
     const loading = useSelector(selectLoading);
     const loaded = useSelector(selectLoaded);
     const list = useSelector(selectList);
@@ -96,5 +96,3 @@ const JobPostingsList: React.FC<JobPostingsListProps> = ({preview = false}) => {
         </Box>
     )
 }
-
-export default JobPostingsList;
