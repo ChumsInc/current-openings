@@ -1,6 +1,6 @@
-import {ErrorAlert} from "../../types";
+import type {ErrorAlert} from "../../types";
 import {createAction, createReducer, isRejected} from "@reduxjs/toolkit";
-import {RootState} from "../../app/configureStore";
+import type {RootState} from "../../app/configureStore";
 
 export interface AlertsState {
     nextId: number;

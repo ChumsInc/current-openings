@@ -1,5 +1,4 @@
-import React from "react";
-import {JobPosting} from "../types";
+import type {JobPosting} from "../types";
 import JobLocation from "./JobLocation";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";

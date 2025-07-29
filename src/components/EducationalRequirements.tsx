@@ -1,5 +1,3 @@
-import React from 'react';
-
 const description = (value:string) => {
     switch (value) {
     case 'no requirements': return 'No Requirements';

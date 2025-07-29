@@ -1,6 +1,3 @@
-import React from "react";
-
-
 interface JobLocationType {
     streetAddress: string,
     addressLocality: string,

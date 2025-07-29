@@ -1,7 +1,7 @@
-import {RootState} from "../../app/configureStore";
+import type {RootState} from "../../app/configureStore";
 import {createAsyncThunk, createReducer} from "@reduxjs/toolkit";
-import {JobPosting} from "../../types";
-import {fetchJobs, LoadJobsProps} from "./api";
+import type {JobPosting} from "../../types";
+import {fetchJobs, type LoadJobsProps} from "./api";
 
 export interface JobsState {
     list: JobPosting[];
@@ -31,7 +31,7 @@ export const loadJobs = createAsyncThunk<JobPosting[], LoadJobsProps | undefined
         return await fetchJobs(arg);
     },
     {
-        condition: (arg, {getState}) => {
+        condition: (_, {getState}) => {
             const state = getState() as RootState;
             return !selectLoading(state);
         }

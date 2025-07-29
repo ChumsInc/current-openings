@@ -15,6 +15,6 @@ $ui = new WebUI2([
     'requireLogin' => false,
     'title' => 'Current Openings',
 ]);
-$ui->addCSS('public/main.css', CSSOptions::parse(['useTimestampVersion' => true]))
-    ->addManifestJSON('public/js/manifest.json')
+$ui->addCSS('dist/main.css', CSSOptions::parse(['useTimestampVersion' => true]))
+    ->addViteManifest()
     ->render();

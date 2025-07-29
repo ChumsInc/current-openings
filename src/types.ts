@@ -1,4 +1,4 @@
-import {AlertColor} from '@mui/material/Alert'
+import type {AlertColor} from '@mui/material/Alert'
 
 export declare type ValidEmploymentType =
     'FULL_TIME'

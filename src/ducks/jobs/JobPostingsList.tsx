@@ -1,10 +1,9 @@
-import React from "react";
 import {useSelector} from "react-redux";
 import {selectList, selectLoaded, selectLoading} from "./index";
 import Alert from "@mui/material/Alert";
 import JobPostingRender from "../../components/JobPostingRender";
 import JobPostingLink from "../../components/JobPostingLink";
-import {JobPosting} from "../../types";
+import type {JobPosting} from "../../types";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import LinearProgress from "@mui/material/LinearProgress";

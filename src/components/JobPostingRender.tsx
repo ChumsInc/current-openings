@@ -1,5 +1,4 @@
-import React from "react";
-import {EmploymentTypes, JobPosting} from "../types";
+import {EmploymentTypes, type JobPosting} from "../types";
 import {default as JobLocation, jobLocationLD} from "./JobLocation";
 import JobDate from "./JobDate";
 import EducationalRequirements from "./EducationalRequirements";
