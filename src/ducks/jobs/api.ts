@@ -1,9 +1,5 @@
 import type {JobPosting} from "../../types";
 
-export const fetchJobsURL = (id?: number, preview?: boolean) => {
-    return `https://intranet.chums.com/api/payroll/timeclock/job-postings/active/${encodeURIComponent(String(id || ''))}`
-        + (preview ? '?preview=1' : '');
-}
 
 export interface LoadJobsProps {
     id?: number | string | null;
@@ -22,7 +18,7 @@ export async function fetchJobs(arg: LoadJobsProps | undefined): Promise<JobPost
             url = `https://intranet.chums.com/api/payroll/timeclock/job-postings/active/:id.json?${params.toString()}`
                 .replace(':id', arg?.id ? encodeURIComponent(arg.id) : '');
         }
-        const res = await fetch(url);
+        const res = await fetch(url, {cache: 'no-cache'});
         if (!res.ok) {
             return Promise.reject(new Error(`Status: ${res.status}; ${res.statusText}`));
         }

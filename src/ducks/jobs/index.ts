@@ -15,12 +15,6 @@ export const initialState: JobsState = {
     loaded: false,
 }
 
-
-export const fetchJobsURL = (id?: number, preview?: boolean) => {
-    return `https://intranet.chums.com/api/timeclock/job-postings/active/${encodeURIComponent(String(id || ''))}`
-        + (preview ? '?preview=1' : '');
-}
-
 export const selectList = (state: RootState) => state.jobs.list;
 export const selectLoading = (state: RootState) => state.jobs.loading;
 export const selectLoaded = (state: RootState) => state.jobs.loaded;
